@@ -393,50 +393,47 @@ $(document).ready(function(){
                     });
     
     </script>
-    <script>
-        (function () {
-  const second = 1000,
-        minute = second * 60,
-        hour = minute * 60,
-        day = hour * 24;
 
-  //I'm adding this section so I don't have to keep updating this pen every year :-)
-  //remove this if you don't need it
-  let today = new Date(),
-      dd = String(today.getDate()).padStart(2, "0"),
-      mm = String(today.getMonth() + 1).padStart(2, "0"),
-      yyyy = today.getFullYear(),
-      nextYear = yyyy + 1,
-      dayMonth = "09/30/",
-      birthday = dayMonth + yyyy;
-  
-  today = mm + "/" + dd + "/" + yyyy;
-  if (today > birthday) {
-    birthday = dayMonth + nextYear;
-  }
-  //end
-  
-  const countDown = new Date(birthday).getTime(),
-      x = setInterval(function() {    
+    <script>
+    //Function to show show remaining sales period 
+    $(document).ready(function () 
+    {
+        const saleDate="12/30/2021" ; //Set Sales Date as December 30 2021 ※Format must be in mm/dd/yyyy format
+
+        const oneSecond = 1000; //1 Second =1000 milli seconds
+        const oneMinute = oneSecond * 60; //1 Minute =60 seconds
+        const oneHour = oneMinute * 60; //milli seconds in 1 hour
+        const oneDay = oneHour * 24; //milli seconds in 1 day
+        
+     
+     
+     const saleDateTimevalue = new Date(saleDate).getTime();
+     //console.log("SaleDate::"+saleDate);
+     //console.log("saleDateTimevalue::"+saleDateTimevalue);
+
+      x = setInterval(function() 
+      {    
 
         const now = new Date().getTime(),
-              distance = countDown - now;
+        remainingTimeforSaleinMilliSeconds = saleDateTimevalue - now;
 
-        document.getElementById("days").innerText = Math.floor(distance / (day)),
-          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+        document.getElementById("days").innerText = Math.floor(remainingTimeforSaleinMilliSeconds / (oneDay)),
+        document.getElementById("hours").innerText = Math.floor((remainingTimeforSaleinMilliSeconds % (oneDay)) / (oneHour)),
+        document.getElementById("minutes").innerText = Math.floor((remainingTimeforSaleinMilliSeconds % (oneHour)) / (oneMinute)),
+        document.getElementById("seconds").innerText = Math.floor((remainingTimeforSaleinMilliSeconds % (oneMinute)) / oneSecond);
 
         //do something later when date is reached
-        if (distance < 0) {
+        if (remainingTimeforSaleinMilliSeconds < 0) 
+        {
           document.getElementById("headline").innerText = "It's a sale time!";
           document.getElementById("countdown").style.display = "none";
           document.getElementById("content").style.display = "block";
           clearInterval(x);
         }
         //seconds
-      }, 0)
-  }());
+      }, 1000)
+  }
+  ());
     </script>
 </body>
 </html>
