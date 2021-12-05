@@ -12,12 +12,13 @@
     <link rel="stylesheet" href="css/responsive.css"> 
 </head>
 <body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
     <header>
         <div class="container flex">
-            <span onclick="myFunction()" > &#9776;</span>
+            <span onclick="myFunction()"> &#9776;</span>
             <nav id="san" class="temp">
                 <ul>
-                    <li>Home</li><br>
+                    <li>Home</li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" onclick="myFunction()">Close</button> <br>
                     <li>Shortcodes
                         <ul>
                             <li><a href=""> Elements</a></li>
@@ -259,6 +260,28 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        var mybutton = document.getElementById("myBtn");       
+        window.onscroll = function() {scrollFunction()};     
+        function scrollFunction() 
+        {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) 
+        {
+         mybutton.style.display = "block";
+        } 
+        else 
+        {
+          mybutton.style.display = "none";
+        }
+        }
+        
+        function topFunction() 
+        {
+          document.documentElement.scrollTop = 0;
+        }
+    </script>
+    
+    
     <script>
   $(document).ready(function(){
            $(".slider").owlCarousel({

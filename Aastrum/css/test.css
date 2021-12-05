@@ -1,0 +1,17 @@
+header span {
+  display: none;
+}
+
+.logo {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  header span {
+    display: block;
+  }
+  .logo {
+    display: block;
+  }
+}
+/*# sourceMappingURL=test.css.map */

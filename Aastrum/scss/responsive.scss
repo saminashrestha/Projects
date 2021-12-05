@@ -11,6 +11,7 @@
     .hovercover{width:100%;}
     .writings{text-align: left;}
     .thirdsection {flex-direction: column;}
+    .banner{background-size:100%; height: 60vh;}
     .writings{ content: "";position: absolute;left: 100px;top: 50px;}
     .writings h1{font-size: 25px ;}
     .writings h2{font-size: 15px;}
@@ -35,9 +36,10 @@
     .gallerybox{width:100%;}
     .hovercover{width:100%;}
     .writings{text-align: left;}
+    .banner{background-size:100%; height: 60vh;}
     .thirdsection {flex-direction: column;}
-    .writings{ content: "";position: absolute;left: 100px;top: 50px;}
-    .writings h1{font-size: 50px ;}
+    .writings{ content: "";position: absolute;left: 100px;top: 30px;}
+    .writings h1{font-size: 50px ; }
     .writings h2{font-size: 25px;}
     .writings p{font-size: 15px;}
     .flex2 {flex-direction: column;}
