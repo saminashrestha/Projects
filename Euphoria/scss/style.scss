@@ -225,11 +225,13 @@ nav li:nth-child(3) a:hover + .shop-box
 }
 .secondsection
 {
+    position: relative;
     height: 30vh;
     padding: 40px 0px;
     word-spacing: 25px;
     letter-spacing: 1px;
     color: #1f1f1f;
+    z-index: 9999;
 }
 .navbar-2
 {
@@ -241,7 +243,7 @@ nav li:nth-child(3) a:hover + .shop-box
     position: absolute;
     text-align: center;
     top: -10px;
-    right:50px;
+    right:58px;
     width: 20px;
     height: 20px;
     color: white;
@@ -255,7 +257,7 @@ nav li:nth-child(3) a:hover + .shop-box
     position: absolute;
     text-align: center;
     top: -10px;
-    right:175px;
+    right:169px;
     width: 20px;
     height: 20px;
     color: white;
@@ -263,6 +265,21 @@ nav li:nth-child(3) a:hover + .shop-box
     border-radius: 50%;
     background: #c4704b;
 }
+.temp
+{
+    background: white; 
+    width: 450px;
+    content: "";
+    position: absolute;
+    left: 0px; top: 20px;
+    display: none;
+    text-align: left;
+    padding: 5px 15px;
+    line-height: 2;
+    border-bottom: 1px solid grey;
+}
+.temp ul{list-style: none;}
+.mystyle{display: none;}
 .thirdsection
 {
     margin-top: -70px;
@@ -658,7 +675,6 @@ nav li:nth-child(3) a:hover + .shop-box
 footer
 {
     background: #ffece5;
-    height: 40vh;
 }
 .footerlist
 {

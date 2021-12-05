@@ -1,1 +1,162 @@
-/* No CSS *//*# sourceMappingURL=responsive.css.map */
+@media (max-width: 482px) {
+  .container {
+    margin: 0px 15px;
+  }
+  .navbar {
+    display: none;
+  }
+  .secondsection {
+    padding: 20px 0px;
+    margin: 10px 0px;
+  }
+  .logo {
+    text-align: left;
+  }
+  .menubar {
+    border: 1px solid black;
+  }
+  .mystyle {
+    display: block;
+  }
+  .euphoriatext {
+    display: none;
+  }
+  .linkline {
+    display: none;
+  }
+  .fourthsection img {
+    left: 0px;
+  }
+  .fourthsection h2 {
+    left: 53px;
+  }
+  .fourthsection h1 {
+    left: 50px;
+    font-size: 40px;
+  }
+  .fifthsection {
+    margin-bottom: 100px;
+  }
+  .bag h2 {
+    font-size: 50px;
+    top: -30px;
+  }
+  .jwellery h2 {
+    font-size: 50px;
+    top: 340px;
+  }
+  .clothing h2 {
+    font-size: 50px;
+    top: -30px;
+  }
+  .eighthsection {
+    display: none;
+  }
+  .flex1 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .designerimg {
+    width: 100%;
+  }
+  .designersword {
+    margin-top: -50px;
+  }
+  .tenthsection img {
+    left: 0px;
+  }
+  .tenthsection h2 {
+    left: 53px;
+  }
+  .tenthsection h1 {
+    left: 50px;
+    font-size: 40px;
+  }
+  .eleventhsection {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 760px) and (min-width: 481px) {
+  .container {
+    margin: 0px 15px;
+  }
+  .navbar {
+    display: none;
+  }
+  .secondsection {
+    padding: 20px 0px;
+    margin: 10px 0px;
+  }
+  .logo {
+    text-align: left;
+  }
+  .menubar {
+    border: 1px solid black;
+  }
+  .mystyle {
+    display: block;
+  }
+  .euphoriatext {
+    display: none;
+  }
+  .linkline {
+    display: none;
+  }
+  .fourthsection img {
+    left: 0px;
+  }
+  .fourthsection h2 {
+    left: 53px;
+  }
+  .fourthsection h1 {
+    left: 50px;
+    font-size: 40px;
+  }
+  .fifthsection {
+    margin-bottom: 100px;
+  }
+  .bag h2 {
+    font-size: 50px;
+    top: -30px;
+  }
+  .jwellery h2 {
+    font-size: 50px;
+    top: 340px;
+  }
+  .clothing h2 {
+    font-size: 50px;
+    top: -30px;
+  }
+  .eighthsection {
+    display: none;
+  }
+  .flex1 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .designerimg {
+    width: 100%;
+  }
+  .designersword {
+    margin-top: -50px;
+  }
+  .tenthsection img {
+    left: 0px;
+  }
+  .tenthsection h2 {
+    left: 53px;
+  }
+  .tenthsection h1 {
+    left: 50px;
+    font-size: 40px;
+  }
+  .eleventhsection {
+    margin-bottom: 50px;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */

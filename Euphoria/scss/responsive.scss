@@ -1,56 +1,55 @@
-@media(max-width:500px)
+@media(max-width:482px)
 {
+    .container{margin: 0px 15px;}
+    .navbar{display: none;}
+    .secondsection{ padding: 20px 0px; margin: 10px 0px;}
+    .logo{text-align:left;}
+    .menubar{border: 1px solid black;}
+    .mystyle{display: block;}
+    .euphoriatext{display: none;}
+    .linkline{display: none;}
+    .fourthsection img{left: 0px;}
+    .fourthsection h2{left: 53px;}
+    .fourthsection h1{ left:50px;font-size: 40px;}
+    .fifthsection{margin-bottom: 100px;}
+    .bag h2{font-size: 50px;top: -30px;}
+    .jwellery h2{font-size: 50px;top: 340px;}
+    .clothing h2{font-size: 50px;top: -30px;}
+    .eighthsection{display: none;}
+    .flex1{flex-direction: column;}
+    .designerimg{width: 100%;}
+    .designersword{ margin-top: -50px;}
+    .tenthsection img{left: 0px;}
+    .tenthsection h2{left: 53px;}
+    .tenthsection h1{ left:50px; font-size: 40px;}
+    .eleventhsection{margin-bottom: 50px;}
     
 }
 
 
-
-
-// @media(max-width:482px)
-// {
-//     .container{margin: 0px 35px;}
-//     .logo{margin:0px 120px}
-//     header{display: flex; flex-direction: row;}
-//     header span{display: block;}
-//     header nav{display: none;}
-//     .temp{display: none;}
-//     .mystyle{display: block;}
-//     .gallerybox{width:100%;}
-//     .hovercover{width:100%;}
-//     .writings{text-align: left;}
-//     .thirdsection {flex-direction: column;}
-//     .writings{ content: "";position: absolute;left: 100px;top: 50px;}
-//     .writings h1{font-size: 25px ;}
-//     .writings h2{font-size: 15px;}
-//     .writings p{font-size: 10px;}
-//     .flex2 {flex-direction: column;}
-//     .flex1 {flex-direction: column;}
-//     .one{display: flex; flex-direction: row; margin: 15px 0px;}
-//     .footerlist{margin: 15px 0px;}  
-//     .media{text-align: left; margin-top: 5px;}
-
-    
-// }
-// @media(max-width:760px) and(min-width:481px)
-// {
-//     .container{margin: 0px 35px;}
-//     .logo{margin:0px 120px}
-//     header{display: flex; flex-direction: row;}
-//     header span{display: block;}
-//     header nav{display: none;}
-//     .temp{display: none;}
-//     .mystyle{display: block;}
-//     .gallerybox{width:100%;}
-//     .hovercover{width:100%;}
-//     .writings{text-align: left;}
-//     .thirdsection {flex-direction: column;}
-//     .writings{ content: "";position: absolute;left: 100px;top: 50px;}
-//     .writings h1{font-size: 50px ;}
-//     .writings h2{font-size: 25px;}
-//     .writings p{font-size: 15px;}
-//     .flex2 {flex-direction: column;}
-//     .flex1 {flex-direction: column;}
-//     .one{display: flex; flex-direction: row; margin: 15px 0px;}
-//     .footerlist{margin: 15px 0px;}  
-//     .media{text-align: left; margin-top: 5px;}
-// }
+@media(max-width:760px) and(min-width:481px)
+{
+    .container{margin: 0px 15px;}
+    .navbar{display: none;}
+    .secondsection{ padding: 20px 0px; margin: 10px 0px;}
+    .logo{text-align:left;}
+    .menubar{border: 1px solid black;}
+    .mystyle{display: block;}
+    .euphoriatext{display: none;}
+    .linkline{display: none;}
+    .fourthsection img{left: 0px;}
+    .fourthsection h2{left: 53px;}
+    .fourthsection h1{ left:50px;font-size: 40px;}
+    .fifthsection{margin-bottom: 100px;}
+    .bag h2{font-size: 50px;top: -30px;}
+    .jwellery h2{font-size: 50px;top: 340px;}
+    .clothing h2{font-size: 50px;top: -30px;}
+    .eighthsection{display: none;}
+    .flex1{flex-direction: column;}
+    .designerimg{width: 100%;}
+    .designersword{ margin-top: -50px;}
+    .tenthsection img{left: 0px;}
+    .tenthsection h2{left: 53px;}
+    .tenthsection h1{ left:50px; font-size: 40px;}
+    .eleventhsection{margin-bottom: 50px;}
+}

@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="css/responsive.css"> 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css"> 
 </head>
 <body>
     <section class="firstsection">
@@ -81,7 +81,51 @@
                 <div class="wishlist">
                     <h3>&nbsp;<i class="far fa-heart"></i>Wishlist</h3>
                 </div>
-                <div>&nbsp; &#9776;</div>
+                <div onclick="myFunction()">&nbsp; &#9776;</div>
+                <div id="san" class="temp">
+                    <<ul>
+                        <li class="active"><a href="">HOME </a>
+                            <div class="Home-box">
+                                <ul>
+                                    <li>Main Home</li>
+                                    <li>Fashin Home</li>
+                                    <li>Collection Home</li>
+                                    <li>Left Menu Home</li>
+                                    <li>Verticle slider</li>
+                                    <li>Euphoria Showcase</li>
+                                    <li>Collection Showcase</li>
+                                    <li>product Showcase</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="">PAGES </a>
+                            <div class="page-box">
+                                <ul>
+                                    <li>About us</li>
+                                    <li>Team</li>
+                                    <li>Gift Card</li>
+                                    <li>Coming Soon</li>
+                                    <li>privacy Policy</li>
+                                    <li>FAQ</li>
+                                    <li>Store Locator</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="">SHOP </i></a>
+                            <div class="shop-box">
+                                <ul>
+                                    <li>Shop Page</li>
+                                    <li>Look Book</li>
+                                    <li>Product List</li>
+                                    <li>Coming Soon</li>
+                                    <li>Single Product</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="">BLOG </i></a></li>
+                        <li><a href="">CONTACTUS</a></li>
+                     </ul>
+                </div>
             </div>
          </div>
     </section>
@@ -255,7 +299,7 @@
           </div>
     </section>
     <section class="ninthsection">
-        <div class="container flex">
+        <div class="container flex1">
             <div class="designerimg"><img src="images/2-3.jpg"></div>
             <div class="designersword">
                 <img src="images/coma.PNG">
@@ -377,8 +421,26 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
-      $(document).ready(function(){
-  $(".one").owlCarousel();
+        $(document).ready(function(){
+        $(".one").owlCarousel({
+        items:3,
+        responsiveClass:true,
+               responsive:{
+               0:{
+                items:1,
+                
+            },
+                 600:{
+                 items:1,
+                 
+             },
+                1000:{
+                 items:3,
+                
+                    
+        }
+    }
+  });
 });
 $(document).ready(function(){
          $(".two").owlCarousel({
@@ -388,13 +450,38 @@ $(document).ready(function(){
              margin:10,
              autoplay:true,
              autoplayTimeout:1500,
-             autoplayHoverPause:true
+             autoplayHoverPause:true,
+             responsiveClass:true,
+               responsive:{
+               0:{
+                items:1,
+                
+            },
+                 600:{
+                 items:1,
+                 
+             },
+                1000:{
+                 items:3,
+                
+                    
+        }
+    }
+
+               
                     });
                     });
     
     </script>
-
     <script>
+            function myFunction()
+            {
+                console.log("clicked 0");
+            document.getElementById("san").classList.toggle("mystyle");
+            }
+    </script>
+
+<script>
     //Function to show show remaining sales period 
     $(document).ready(function () 
     {
