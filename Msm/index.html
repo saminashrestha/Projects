@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misumi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    <header>
+        <div class="container">
+            <div class="header_top flex">
+                <div class="logo"><img src="../image/logo.png" alt="logo"></div>
+                <div class="writing">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVIAAAAiCAYAAAANgFGaAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFG2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNi4wLWMwMDYgNzkuZGFiYWNiYiwgMjAyMS8wNC8xNC0wMDozOTo0NCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIyLjQgKE1hY2ludG9zaCkiIHhtcDpDcmVhdGVEYXRlPSIyMDIxLTA3LTA1VDEyOjAyOjEzKzA5OjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMS0wNy0wNVQxMjowOToxOCswOTowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyMS0wNy0wNVQxMjowOToxOCswOTowMCIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4MDMwMGEzNS02OWZi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" alt="jp">
+                    <p>Depending on the product, it can be shipped on the same day at the reception desk up to 17:00.<br>
+                            Business hours are from 8:00 to 20:00. (Excluding Sundays and New Year holidays)</p>
+                </div>
+                <div onclick="myFunction()" class="modelquote">Model Number Quote / Order <i class="fas fa-sort-down"></i>
+                    <div id="san" class="displayfirst"> 
+                        <div class="maintopper">(WOS) Model Number Quote / Order </div>
+                        <div class="firstrow flex">
+                            <div class="firstrow_one">Quote</div>
+                            <div class="firstrow_two">Order</div>
+                        </div>  
+                        <div class="secondrow flex">
+                            <div class="secondrow_one">Estimate history</div>
+                            <div class="secondrow_two">Order history</div>
+                        </div>
+                        <div class="thirdrow flex">
+                            <div class="thirdrow_one">Excel batch copy</div>
+                            <div class="thirdrow_two">
+                                <a href="">Quote</a> /
+                                <a href="">Order</a>
+                            </div>
+                        </div>
+                        <div class="fourthrow flex">
+                            <div class="fourthrow_one">CSV upload</div>
+                            <div class="fourthrow_two">
+                                <a href="">Quote</a> /
+                                <a href="">Order</a>
+                            </div>
+                        </div>
+                        <div class="fifthrow"><a href="">Shipping hostory</a> </div>
+                        <div class="lastrow">Model number check service</div>
+                    </div>
+                </div>
+                <div onclick="myFunction1()" class="customerservice">Customer Service Window<i class="fas fa-sort-down"></i>
+                    <div id="san1" class="displaysecond">
+                        <div class="displaysecond_1">Misumi Customer Service Counter</div>
+                        <div class="displaysecond_2">About individual product status and technical content</div>
+                        <div class="displaysecond_3">Web Enquiry Form</div>
+                        <div class="displaysecond_4">About general order status</div>
+                        <div class="displaysecond_5">Tel 0120-343-066 
+                            <br>
+                            <p>Currently, the telephone reception time has been shortened from 9:00 to 18:00.</p>
+                            Fax 0570-034-355
+                        </div>
+                        <div class="displaysecond_6"><a href="">Web inquiry form</a></div>
+                        <div class="displaysecond_7">Business hours: 8: 00-20: 00 (excluding Sundays
+                            <br> and New Year holidays)
+                            <br>* The inquiry form is available 24 hours a day.</div>
+                        <div class="displaysecond_8"><a href="">List of other inquiries</a></div>
+                    </div>
+                </div> 
+            </div>  
+            <div class="header_down flex">
+                <div class="search"><input type="text" placeholder="Please enter the keyword and model number">
+                </div><button class="btn">Search</button>
+                <div onclick="myFunction2()"  class="login">Login/New Registration<i class="fas fa-sort-down"></i>
+                    <div id="san2" class="insidelogin">
+                        <div class="loginblue">Login</div>
+                        <form class="existingclient">
+                            <h5>Login ID</h5>
+                            <input type="text">
+                            <h5>Password</h5>
+                            <input type="text"><br>
+                            <button class="loginbtn">Login</button>
+                            <p><a href=""> >If you have forgotten your login ID</a></p>
+                            <p><a href=""> >If you forget your password</a></p>
+                        </form>
+                        <form class="newclient">
+                            <div class="firsttime">First time</div>
+                            <button class="newmember">New member Registration</button>
+                        </form>
+                        <div class="requirement">
+                            <p>Membership registration is required for CAD<br>
+                             download, quotation, ordering, etc.</p>
+                        </div>
+                        <div class="listofservice">
+                            <a href=""> >List of services that can be used after membership registration</a>
+                        </div>    
+                    </div>
+                </div>
+                <div class="cart">Cart(0)</div>  
+            </div>
+        </div>        
+    </header>
+    <section class="middle_section container flex">
+        <div class="first_section">
+            <div class="searchbycategory">Search By Category</div>
+            <div class="parts">
+                <div class="mechanicalparts">Mechanical Parts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <i class="fas fa-cogs"></i>
+                    <div class="hover_box">
+                        <div class="flex">
+                            <a href=""> Linear moving parts</a>
+                            <a href=""> Rotating parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Connection / link mechanism parts</a>
+                            <a href=""> Transmission parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Power source / motor / reducer</a>
+                            <a href=""> Conveyors, rollers, transport parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Robot parts</a>
+                            <a href=""> Positioning, jig parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Stages, optical parts, image processing parts</a>
+                            <a href=""> Sensor switch</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Pneumatic equipment</a>
+                            <a href=""> Vacuum parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Flood control equipment</a>
+                            <a href=""> Discharge / coating equipment</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Plumbing parts</a>
+                            <a href=""> Modules / devices</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Temperature control parts</a>
+                            <a href=""> Frames, support parts, struts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Caster adjuster anchor</a>
+                            <a href=""> Door parts / exterior parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Spring / impact protection</a>
+                            <a href=""> Adjustment Fastener Parts / Pins / Small Parts</a>
+                        </div>
+                        <div>
+                            <a href=""> Measures / maintenance related</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="screw">Screw, Bolts, Washers, Nuts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <i class="fas fa-screwdriver"></i>
+                    <div class="hover_box1">
+                        <div class="flex">
+                            <a href=""> Linear moving parts</a>
+                            <a href=""> Rotating parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Connection / link mechanism parts</a>
+                            <a href=""> Transmission parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Power source / motor / reducer</a>
+                            <a href=""> Conveyors, rollers, transport parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Robot parts</a>
+                            <a href=""> Positioning, jig parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Stages, optical parts, image processing parts</a>
+                            <a href=""> Sensor switch</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Pneumatic equipment</a>
+                            <a href=""> Vacuum parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Flood control equipment</a>
+                            <a href=""> Discharge / coating equipment</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Plumbing parts</a>
+                            <a href=""> Modules / devices</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Temperature control parts</a>
+                            <a href=""> Frames, support parts, struts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Caster adjuster anchor</a>
+                            <a href=""> Door parts / exterior parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Spring / impact protection</a>
+                            <a href=""> Adjustment Fastener Parts / Pins / Small Parts</a>
+                        </div>
+                        <div>
+                            <a href=""> Measures / maintenance related</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="material">Material (Metal, Resin, etc) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="wiring">Wiring Parts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="control_electrical_parts">Control Parts/Electrical Parts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="cutting">Cutting Tools &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="productionprocessing">Production Procesing Supplies &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="packinglogistic">Packing and Logistic Sortage Supplies &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="safety">Safety Protection, Environmental Hygiene, Office Supplies &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="R&D">R&D / Clean Room Supplies &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="press_die">Press Die Parts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="plastic_mold">Plastic Mold Parts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="injection_molding">Injection Molding Parts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="mechanicalparts">Mechanical Parts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <i class="fas fa-cogs"></i>
+                    <div class="hover_box">
+                        <div class="flex">
+                            <a href=""> Linear moving parts</a>
+                            <a href=""> Rotating parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Connection / link mechanism parts</a>
+                            <a href=""> Transmission parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Power source / motor / reducer</a>
+                            <a href=""> Conveyors, rollers, transport parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Robot parts</a>
+                            <a href=""> Positioning, jig parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Stages, optical parts, image processing parts</a>
+                            <a href=""> Sensor switch</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Pneumatic equipment</a>
+                            <a href=""> Vacuum parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Flood control equipment</a>
+                            <a href=""> Discharge / coating equipment</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Plumbing parts</a>
+                            <a href=""> Modules / devices</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Temperature control parts</a>
+                            <a href=""> Frames, support parts, struts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Caster adjuster anchor</a>
+                            <a href=""> Door parts / exterior parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Spring / impact protection</a>
+                            <a href=""> Adjustment Fastener Parts / Pins / Small Parts</a>
+                        </div>
+                        <div>
+                            <a href=""> Measures / maintenance related</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="screw">Screw, Bolts, Washers, Nuts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <i class="fas fa-screwdriver"></i>
+                    <div class="hover_box1">
+                        <div class="flex">
+                            <a href=""> Linear moving parts</a>
+                            <a href=""> Rotating parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Connection / link mechanism parts</a>
+                            <a href=""> Transmission parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Power source / motor / reducer</a>
+                            <a href=""> Conveyors, rollers, transport parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Robot parts</a>
+                            <a href=""> Positioning, jig parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Stages, optical parts, image processing parts</a>
+                            <a href=""> Sensor switch</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Pneumatic equipment</a>
+                            <a href=""> Vacuum parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Flood control equipment</a>
+                            <a href=""> Discharge / coating equipment</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Plumbing parts</a>
+                            <a href=""> Modules / devices</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Temperature control parts</a>
+                            <a href=""> Frames, support parts, struts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Caster adjuster anchor</a>
+                            <a href=""> Door parts / exterior parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Spring / impact protection</a>
+                            <a href=""> Adjustment Fastener Parts / Pins / Small Parts</a>
+                        </div>
+                        <div>
+                            <a href=""> Measures / maintenance related</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="material">Material (Metal, Resin, etc) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="mechanicalparts">Mechanical Parts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <i class="fas fa-cogs"></i>
+                    <div class="hover_box">
+                        <div class="flex">
+                            <a href=""> Linear moving parts</a>
+                            <a href=""> Rotating parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Connection / link mechanism parts</a>
+                            <a href=""> Transmission parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Power source / motor / reducer</a>
+                            <a href=""> Conveyors, rollers, transport parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Robot parts</a>
+                            <a href=""> Positioning, jig parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Stages, optical parts, image processing parts</a>
+                            <a href=""> Sensor switch</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Pneumatic equipment</a>
+                            <a href=""> Vacuum parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Flood control equipment</a>
+                            <a href=""> Discharge / coating equipment</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Plumbing parts</a>
+                            <a href=""> Modules / devices</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Temperature control parts</a>
+                            <a href=""> Frames, support parts, struts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Caster adjuster anchor</a>
+                            <a href=""> Door parts / exterior parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Spring / impact protection</a>
+                            <a href=""> Adjustment Fastener Parts / Pins / Small Parts</a>
+                        </div>
+                        <div>
+                            <a href=""> Measures / maintenance related</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="screw">Screw, Bolts, Washers, Nuts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <i class="fas fa-screwdriver"></i>
+                    <div class="hover_box1">
+                        <div class="flex">
+                            <a href=""> Linear moving parts</a>
+                            <a href=""> Rotating parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Connection / link mechanism parts</a>
+                            <a href=""> Transmission parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Power source / motor / reducer</a>
+                            <a href=""> Conveyors, rollers, transport parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Robot parts</a>
+                            <a href=""> Positioning, jig parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Stages, optical parts, image processing parts</a>
+                            <a href=""> Sensor switch</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Pneumatic equipment</a>
+                            <a href=""> Vacuum parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Flood control equipment</a>
+                            <a href=""> Discharge / coating equipment</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Plumbing parts</a>
+                            <a href=""> Modules / devices</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Temperature control parts</a>
+                            <a href=""> Frames, support parts, struts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Caster adjuster anchor</a>
+                            <a href=""> Door parts / exterior parts</a>
+                        </div>
+                        <div class="flex">
+                            <a href=""> Spring / impact protection</a>
+                            <a href=""> Adjustment Fastener Parts / Pins / Small Parts</a>
+                        </div>
+                        <div>
+                            <a href=""> Measures / maintenance related</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="material">Material (Metal, Resin, etc) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <i class="fas fa-cogs"></i>
+                </div>
+            </div>
+        </div>
+        <div class="second_section">
+            <div class=" second_section_firstpart owl-carousel one">
+                <div> <img src="image/bnr1.png"></div>
+                <div> <img src="image/bnr2.png"></div>
+                <div> <img src="image/bnr3.png"></div>
+                <div> <img src="image/bnr4.png"></div>
+                <div> <img src="image/bnr5.png"></div>
+                <div> <img src="image/bnr6.png"></div>
+                <div> <img src="image/bnr1.png"></div>
+                <div> <img src="image/bnr6.png"></div>
+            </div>
+            <div class="second_section_secondpart">
+                <div class="recommend">Recommended Categories</div>
+                    <div class="owl-carousel two">
+                            <div>
+                                <div class="smallbox"><img src="image/knock pin.jpg"></div>
+                                <div class="caption"><h6><a href="">Knock pin, stepped pin, spring pin</a></h6></div> 
+                                <div class="smallbox"><img src="image/small parts.jpg"> </div>
+                                <div class="caption"><h6><a href="">Punch</a></h6></div>                    
+                            </div>
+                            <div>
+                                <div class="smallbox"><img src="image/linear shaft.jpg"></div>
+                                <div class="caption"><h6><a href="">Linear shaft</a></h6></div>
+                                <div class="smallbox"><img src="image/spring.jpg"></div>
+                                <div class="caption"><h6><a href="">Punch</a></h6></div> 
+                            </div>
+                            <div>
+                                <div class="smallbox"><img src="image/metal materials.jpg"></div>
+                                <div class="caption"><h6><a href="">metal materials</a></h6></div>
+                                <div class="smallbox"><img src="image/struts.jpg"></div> 
+                                <div class="caption"><h6><a href="">Punch</a></h6></div>
+                            </div>
+                            <div>
+                                <div class="smallbox"><img src="image/mold.jpg"> </div>
+                                <div class="caption"><h6><a href="">Screws and bolts</a></h6></div>
+                                <div class="smallbox"><img src="image/washer.jpg"></div>
+                                <div class="caption"><h6><a href="">Punch</a></h6> </div>
+                            </div>
+                            <div>
+                                <div class="smallbox"><img src="image/nuts.jpg"></div>
+                                <div class="caption"><h6><a href="">nut</a></h6></div>
+                                <div class="smallbox"><img src="image/adjustment screw.jpg"></div>
+                                <div class="caption"><h6><a href="">Punch</a></h6> </div>
+                            </div>
+                            <div>
+                                <div class="smallbox"><img src="image/positioning pin.jpg"> </div>
+                                <div class="caption"><h6><a href="">Positioning pin bush</a></h6></div>
+                                <div class="smallbox"><img src="image/aluminiumframes.jpg"></div>
+                                <div class="caption"><h6><a href="">Punch</a></h6> </div>
+                            </div>
+                            <div>
+                                <div class="smallbox"><img src="image/punch.jpg"></div>
+                                <div class="caption"><h6><a href="">Punch</a></h6></div> 
+                                <div class="smallbox"><img src="image/struts.jpg"></div> 
+                                <div class="caption"><h6><a href="">Punch</a></h6></div>
+                            </div>
+                            <div>
+                                <div class="smallbox"><img src="image/screwwasher.jpg"></div> 
+                                <div class="caption"><h6><a href="">Punch</a></h6> </div>
+                                <div class="smallbox"><img src="image/screwwasher.jpg"></div> 
+                                <div class="caption"><h6><a href="">Punch</a></h6> </div>
+                            </div>
+                    </div>
+            </div>
+        </div>
+        <div class="third_section">
+            <div class="first_thirdsection"> 
+                <div class="maintopper">(WOS) Model Number Quote / Order </div>
+                <div class="firstrow flex">
+                    <div class="firstrow_one">Quote</div>
+                    <div class="firstrow_two">Order</div>
+                </div>  
+                <div class="secondrow flex">
+                    <div class="secondrow_one">Estimate History</div>
+                    <div class="secondrow_two">Order History</div>
+                </div>
+                <div class="thirdrow flex">
+                    <div class="thirdrow_one">Excel Batch Copy</div>
+                    <div class="thirdrow_two">
+                        <a href="">Quote</a> /
+                        <a href="">Order</a>
+                    </div>
+                </div>
+                <div class="fourthrow flex">
+                    <div class="fourthrow_one">CSV upload</div>
+                    <div class="fourthrow_two">
+                        <a href="">Quote</a> /
+                        <a href="">Order</a>
+                    </div>
+                </div>
+                <div class="fifthrow"><a href="">Shipping History</a> </div>
+                <div class="lastrow">Model Number Check Service</div>
+            </div>
+            <div class="second_thirdsection">
+                <div class="beginerguide">Beginner's Guide</div>
+                <div class="registration_new flex">
+                    <div><a href=""> New member registration</a></div>
+                    <div><a href="">User Guide</a></div>
+                </div>
+                <div class="FAQ flex">
+                    <div><a href="">FAQ</a></div>
+                    <div><a href="">inquiry</a></div>
+                </div>
+            </div>
+            <div class="third_thirdsection">
+                <a href=""> <img src="image/sidebanner.png"></a>
+            </div>
+            <div class="last_thirdsection flex">
+                <div class="lastwritting1">技術情報</div>
+                <div class="lastwritting2">製造現場の設計、加工 保全<br>
+                    技術から工具豆知識まで</div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="contactus">Contact us</div>
+            <div class="contactcategory">
+                <div class="rowone flex">
+                    <div class="rowone-1">Product Specifications and Technologies</div>
+                    <div class="rowone-2">Order and Deals</div>
+                </div>
+                <div class="rowtwo flex">
+                    <div class="contactone">
+                        <button class="btnweb">Web Inquiry Form</button>
+                        <p>24-hour Reception</p>
+                    </div>
+                    <div class="contacttwo">
+                        <h1>0120-343-066</h1>
+                        <p>8:00 a.m. - 8:00 p.m. (excluding sundays and year-end and new year holidays)<br>
+                            <span class="red">currently, telephone reception hours have been reduced from 9:00 to 18:00.</span><br>
+                            <span><a href=""> Web inquiry form (login required)</a></span> <br>
+                            24-hour reception<br>
+                    </div>
+                </div>
+                <div class="rowthree">
+                    <p>we record some calls with customers to improve the quality of service.</p><br>
+                    <p><a href="">click here for other contact information.</a></p><br>
+                    <p>Copyright © MISUMI Corporation All Rights Reserved.</p><br>
+                </div>
+            </div>
+        </div>  
+        
+    </footer>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        var mybutton = document.getElementById("myBtn");       
+        window.onscroll = function() {scrollFunction()};     
+        function scrollFunction() 
+        {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) 
+        {
+         mybutton.style.display = "block";
+        } 
+        else 
+        {
+          mybutton.style.display = "none";
+        }
+        }
+        
+        function topFunction() 
+        {
+          document.documentElement.scrollTop = 0;
+        }
+        </script>
+    
+    
+    
+    <script>
+        function myFunction()
+        {
+          console.log("clicked 0");
+          document.getElementById("san").classList.toggle("mystyle");
+        }
+        function myFunction1()
+        {
+            console.log("clicked 1");
+        document.getElementById("san1").classList.toggle("mystyle1");
+        }
+        function myFunction2()
+        {
+            console.log("clicked 2");
+        document.getElementById("san2").classList.toggle("mystyle2");
+        }
+        $(document).ready(function(){
+         $(".one").owlCarousel({
+             items:1,
+             dots:true,
+             loop:true,
+             margin:10,
+             autoplay:true,
+             autoplayTimeout:1000,
+             autoplayHoverPause:true
+                    });
+                    });
+
+
+         $(document).ready(function(){
+         $(".two").owlCarousel({
+             items:4,
+             nav:true,
+             loop:true,
+             mouseDrag:false,
+             dots:false,
+             navText:['<div class=arrown> > </div>,<div class=arrowp> < </div>']
+                    });
+                    });
+
+    </script>
+</body>
+</html>
