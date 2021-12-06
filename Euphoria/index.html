@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Euphoria</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -81,8 +84,8 @@
                 <div class="wishlist">
                     <h3>&nbsp;<i class="far fa-heart"></i>Wishlist</h3>
                 </div>
-                <div style="cursor: pointer;" onclick="myFunction()">&nbsp; &#9776;</div>
-                <div id="san" class="temp">
+                <span class="clickbtn" data-toggle="collapse" data-target="#san" onclick="myFunction()">&nbsp; &#9776;</span>
+                <div id="san" class="temp collapse">
                     <ul>
                         <li class="active"><a href="">HOME </a>
                             <div class="Home-box">

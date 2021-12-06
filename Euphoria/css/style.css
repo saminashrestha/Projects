@@ -105,8 +105,8 @@ ul li a:hover::after {
   display: none;
   content: "";
   position: absolute;
-  left: 50px;
-  top: 94px;
+  left: -15px;
+  top: 20px;
   padding: 20px;
   width: 200px;
   background: #ffece5;
@@ -159,8 +159,8 @@ nav li:first-child a:hover + .Home-box {
   display: none;
   content: "";
   position: absolute;
-  left: 130px;
-  top: 94px;
+  left: 55px;
+  top: 20px;
   padding: 20px;
   width: 200px;
   background: #ffece5;
@@ -213,8 +213,8 @@ nav li:nth-child(2) a:hover + .page-box {
   display: none;
   content: "";
   position: absolute;
-  left: 210px;
-  top: 94px;
+  left: 135px;
+  top: 20px;
   padding: 20px;
   width: 200px;
   background: #ffece5;
@@ -273,6 +273,11 @@ nav li:nth-child(3) a:hover + .shop-box {
   z-index: 9999;
 }
 
+.navbar a {
+  color: #1f1f1f;
+  text-decoration: none;
+}
+
 .navbar-2 {
   position: relative;
 }
@@ -281,8 +286,8 @@ nav li:nth-child(3) a:hover + .shop-box {
   content: "0";
   position: absolute;
   text-align: center;
-  top: -10px;
-  right: 58px;
+  top: 5px;
+  right: 85px;
   width: 20px;
   height: 20px;
   color: white;
@@ -295,8 +300,8 @@ nav li:nth-child(3) a:hover + .shop-box {
   content: "0";
   position: absolute;
   text-align: center;
-  top: -10px;
-  right: 169px;
+  top: 5px;
+  right: 195px;
   width: 20px;
   height: 20px;
   color: white;
@@ -305,18 +310,27 @@ nav li:nth-child(3) a:hover + .shop-box {
   background: #c4704b;
 }
 
+.clickbtn {
+  font-size: 30px;
+  cursor: pointer;
+}
+
 .temp {
-  background: white;
-  width: 450px;
+  background: #ffece5;
+  width: 480px;
   content: "";
   position: absolute;
   left: 0px;
-  top: 20px;
+  top: 50px;
   display: none;
   text-align: left;
   padding: 5px 15px;
   line-height: 2;
   border-bottom: 1px solid grey;
+}
+
+.temp a {
+  color: #1f1f1f;
 }
 
 .temp ul {
