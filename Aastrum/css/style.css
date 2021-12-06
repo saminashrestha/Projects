@@ -213,6 +213,7 @@ nav li:nth-child(3) a:hover + .pages-box {
   background-color: #f2f2f2;
   position: relative;
   top: -6px;
+  cursor: pointer;
 }
 
 .search i {
@@ -268,6 +269,7 @@ nav li:nth-child(3) a:hover + .pages-box {
 
 .one {
   width: 390px;
+  cursor: pointer;
 }
 
 .box {
@@ -396,6 +398,7 @@ nav li:nth-child(3) a:hover + .pages-box {
           box-shadow: 0px 1px 0px 0px #f2f2f2;
   position: relative;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .hovercover {
