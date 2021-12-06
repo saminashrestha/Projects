@@ -12,11 +12,11 @@
     .writings{text-align: left;}
     .thirdsection {flex-direction: column;}
     .banner{background-size:100%; height: 60vh;}
-    .writings{ content: "";position: absolute;left: 100px;top: 50px;}
+    .writings{ content: "";position: absolute;left: 50px;top: 40px;}
     .writings h1{font-size: 25px ;}
     .writings h2{font-size: 15px;}
-    .writings p{font-size: 10px;}
-    .flex2 {flex-direction: column;}
+    .writings p{font-size: 10px;margin-top: 5px;}
+    .flex2 {flex-direction: column;} 
     .flex1 {flex-direction: column;}
     .one{display: flex; flex-direction: row; margin: 15px 0px;}
     .footerlist{margin: 15px 0px;}  
@@ -38,7 +38,7 @@
     .writings{text-align: left;}
     .banner{background-size:100%; height: 60vh;}
     .thirdsection {flex-direction: column;}
-    .writings{ content: "";position: absolute;left: 100px;top: 30px;}
+    .writings{ content: "";position: absolute;left: 50px;top: 40px;}
     .writings h1{font-size: 50px ; }
     .writings h2{font-size: 25px;}
     .writings p{font-size: 15px;}

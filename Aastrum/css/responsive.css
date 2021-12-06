@@ -48,8 +48,8 @@
   .writings {
     content: "";
     position: absolute;
-    left: 100px;
-    top: 50px;
+    left: 50px;
+    top: 40px;
   }
   .writings h1 {
     font-size: 25px;
@@ -59,6 +59,7 @@
   }
   .writings p {
     font-size: 10px;
+    margin-top: 5px;
   }
   .flex2 {
     -webkit-box-orient: vertical;
@@ -141,8 +142,8 @@
   .writings {
     content: "";
     position: absolute;
-    left: 100px;
-    top: 30px;
+    left: 50px;
+    top: 40px;
   }
   .writings h1 {
     font-size: 50px;
