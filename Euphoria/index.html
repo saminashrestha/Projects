@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Euphoria</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -81,9 +81,9 @@
                 <div class="wishlist">
                     <h3>&nbsp;<i class="far fa-heart"></i>Wishlist</h3>
                 </div>
-                <div onclick="myFunction()">&nbsp; &#9776;</div>
+                <div style="cursor: pointer;" onclick="myFunction()">&nbsp; &#9776;</div>
                 <div id="san" class="temp">
-                    <<ul>
+                    <ul>
                         <li class="active"><a href="">HOME </a>
                             <div class="Home-box">
                                 <ul>
@@ -423,7 +423,9 @@
     <script>
         $(document).ready(function(){
         $(".one").owlCarousel({
-        items:3,
+        autoplay:true,
+        autoplayTimeout:1500,
+        autoplayHoverPause:true,
         responsiveClass:true,
                responsive:{
                0:{
@@ -444,7 +446,6 @@
 });
 $(document).ready(function(){
          $(".two").owlCarousel({
-             items:3,
              dots:false,
              loop:true,
              margin:10,
