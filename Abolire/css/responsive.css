@@ -77,6 +77,9 @@
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
   }
+  .media {
+    margin-left: 200px;
+  }
 }
 
 @media (max-width: 760px) and (min-width: 481px) {
@@ -154,6 +157,9 @@
     width: 250px;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
+  }
+  .media {
+    margin-left: 200px;
   }
 }
 /*# sourceMappingURL=responsive.css.map */

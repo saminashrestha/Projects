@@ -282,7 +282,7 @@ nav li:nth-child(5) a:hover + .Blog-box
 .leftarrow
 {
     position: absolute;
-    left: -50px;
+    left: -30px;
     top: 170px;
     color:grey;
     z-index: 99999;
@@ -290,11 +290,10 @@ nav li:nth-child(5) a:hover + .Blog-box
     background:#dcc397 ;
     padding: 9px;
 }
-
 .rightarrow
 {
     position: absolute;
-    right: -50px;
+    right: -30px;
     top: 170px;
     color:grey;
     z-index: 99999;
@@ -675,10 +674,9 @@ margin-bottom: -40px; margin-top: -20px;}
     font-size: 16px;
     padding: 30px 0px;
 }
-
 .media
 {
-     margin-left: 585px;
-     padding: 10px 0px;
-    
+    margin-left: 585px;
+    padding: 10px 0px;   
 }
+.flex1{display: flex;}
